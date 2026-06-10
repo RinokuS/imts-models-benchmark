@@ -1,0 +1,22 @@
+# Direction 3 — Quantization experiment
+# torch.ao for INT8, bitsandbytes for INT4/NF4.
+# Neural ODE/CDE excluded: dynamic graph of ODE solver breaks static quant.
+
+type: quantization
+variants:
+  - name: int8_ptq_torchao
+    stack: torch_ao
+    bits: 8
+
+apply_to:
+  - gru_d
+  - mtan
+  - raindrop
+  - s4
+  - mamba
+  - patchtst
+  - dlinear
+
+metrics: [auroc, auroc_delta, latency_ms, peak_memory_mb, model_size_mb, latency_speedup, memory_reduction]
+datasets: [p12]
+requires_trained_checkpoint: true

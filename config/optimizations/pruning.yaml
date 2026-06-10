@@ -1,0 +1,25 @@
+# Direction 3 — Structured pruning experiment
+# Train→Prune→Fine-tune pipeline.
+# DLinear excluded: already minimal O(n) model with no prunable structure.
+# Latent ODE/Neural CDE excluded: ODE solver is not prunable.
+
+type: pruning
+variants:
+  - name: pruning_50pct
+    amount: 0.50
+  - name: pruning_75pct
+    amount: 0.75
+
+apply_to:
+  - gru_d
+  - mtan
+  - raindrop
+  - s4
+  - mamba
+  - patchtst
+
+finetune_epochs: 15
+finetune_lr: 1.0e-4
+metrics: [auroc, auroc_delta, compression_ratio, latency_speedup, peak_memory_mb]
+datasets: [p12]
+requires_trained_checkpoint: true

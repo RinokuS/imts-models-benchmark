@@ -1,0 +1,10 @@
+model: latent_ode
+complexity_time: "O(n*s*d)"
+complexity_space: "O(d)"   # adjoint method
+latent_dim: 32
+hidden_dim: 64
+rec_hidden_dim: 64
+solver: dopri5
+rtol: 1.0e-3
+atol: 1.0e-4
+adjoint: true

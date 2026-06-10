@@ -1,0 +1,19 @@
+# Direction 2 — Batching strategy experiment
+# Tests padding overhead at different missingness rates.
+
+type: batching
+variants:
+  - name: padding
+    strategy: padding
+  - name: nested_tensors
+    strategy: nested
+    requires_pytorch: "2.2"
+  - name: bucketing_4
+    strategy: bucket
+    n_buckets: 4
+
+apply_to: all_models
+
+missing_rates: [0.2, 0.4, 0.6, 0.8]  # additional MCAR drops on top of P12 baseline
+metrics: [throughput_samples_per_sec, peak_memory_mb, padding_waste_fraction]
+datasets: [p12]

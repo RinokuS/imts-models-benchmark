@@ -1,0 +1,9 @@
+model: mtan
+complexity_time: "O(n*k*d)"
+complexity_space: "O(n*k)"
+hidden_dim: 256
+n_heads: 8
+n_ref_points: 128       # k: number of learned reference time points
+n_layers: 3
+dropout: 0.3
+time_embed_dim: 64

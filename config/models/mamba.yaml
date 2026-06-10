@@ -1,0 +1,10 @@
+model: mamba
+complexity_time: "O(n*d)"
+complexity_space: "O(n*d)"
+d_model: 256
+d_state: 16
+d_conv: 4
+expand: 2               # expansion factor E; inner_dim = d_model * expand
+n_layers: 4
+dropout: 0.1
+use_mamba_ssm: true     # try official CUDA kernel; fall back to pure-torch if unavailable

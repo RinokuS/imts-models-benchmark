@@ -1,0 +1,8 @@
+model: neural_cde
+complexity_time: "O(n*s*d)"
+complexity_space: "O(d)"   # adjoint method
+hidden_dim: 64
+hidden_hidden_dim: 256
+solver: rk4
+adjoint: true
+interpolation: cubic       # cubic | linear

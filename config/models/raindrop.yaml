@@ -1,0 +1,8 @@
+model: raindrop
+complexity_time: "O(n*V*E)"
+complexity_space: "O(n*V^2)"
+d_model: 64
+n_heads: 4
+n_layers: 2
+dropout: 0.3
+n_classes: 2

@@ -1,0 +1,24 @@
+device: cuda          # cuda | cpu
+seeds: [42, 123, 2024]
+
+training:
+  epochs: 100
+  patience: 10          # early stopping on val AUROC
+  lr_patience: 5        # ReduceLROnPlateau patience
+  optimizer: adam
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  batch_size: 64
+  param_budget: 500_000 # target parameter count per model
+
+profiling:
+  n_warmup: 10
+  n_measure: 50
+  profile_batch_size: 32
+
+paths:
+  data_root: data/raw
+  results: results
+  logs: results/logs
+  tables: results/tables
+  figures: results/figures

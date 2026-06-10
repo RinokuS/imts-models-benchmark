@@ -1,0 +1,8 @@
+model: s4
+complexity_time: "O(n*log_n*d)"
+complexity_space: "O(n*d)"
+d_model: 256
+d_state: 64
+n_layers: 4
+dropout: 0.1
+prenorm: true

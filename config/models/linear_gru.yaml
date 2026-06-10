@@ -1,0 +1,7 @@
+model: linear_gru
+complexity_time: "O(n*d^2)"
+complexity_space: "O(d)"
+hidden_dim: 256
+n_layers: 2
+dropout: 0.3
+interp_steps: 100       # number of regular grid points for linear interpolation

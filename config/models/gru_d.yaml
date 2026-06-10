@@ -1,0 +1,6 @@
+model: gru_d
+complexity_time: "O(n*d^2)"
+complexity_space: "O(d)"
+hidden_dim: 256
+n_layers: 2
+dropout: 0.3

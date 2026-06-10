@@ -1,0 +1,11 @@
+model: patchtst
+complexity_time: "O(n^2*d)"   # FLOP; O(n*d) HBM with FlashAttention
+complexity_space: "O(n*d)"    # FlashAttention IO-optimal
+patch_len: 16
+stride: 8
+d_model: 256
+n_heads: 8
+n_layers: 3
+d_ff: 256
+dropout: 0.1
+use_flash_attn: true    # use FlashAttention-2 via torch SDPA if available

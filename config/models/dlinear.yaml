@@ -1,0 +1,6 @@
+model: dlinear
+complexity_time: "O(n*d)"
+complexity_space: "O(d)"
+hidden_dim: 128
+kernel_size: 25         # moving-average window for trend decomposition
+n_layers: 1

@@ -1,0 +1,26 @@
+torch>=2.2.0
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.4        # AUROC, AUPRC, F1, Brier
+scipy>=1.12              # statistical tests
+tqdm>=4.66
+einops>=0.7              # tensor rearranging (attention models)
+pyyaml>=6.0              # config files
+torchdiffeq>=0.2.3       # ODE solver (Dopri5, RK4) — Latent ODE
+torchcde>=0.2.5          # Neural CDE (Patrick Kidger)
+mamba-ssm>=1.2.0         # официальный пакет Mamba (causal-conv1d dependency)
+torchao>=0.9             # modern INT8/INT4 quantization API (replaces deprecated torch.ao); optional
+bitsandbytes>=0.41       # NF4/INT4 quantization; optional (для GPU inference compression)
+causal-conv1d>=1.2.0     # кастомный CUDA kernel для convolution
+flash-attn-4             # вместо flash-attn; API совместим через flash_attn.*
+#torchtime>=0.5          # не поддерживается под Python 3.12 — используем data/physionet_loader.py
+requests>=2.31           # для скачивания датасетов при необходимости
+fvcore>=0.1.5            # FLOPs counting (Facebook Research)
+nvidia-ml-py>=12.0       # GPU monitoring (замена устаревшего pynvml)
+tensorboard>=2.16        # кривые обучения
+matplotlib>=3.8          # графики
+seaborn>=0.13            # heatmaps, Pareto plots
+tabulate>=0.9            # красивый вывод таблиц
+pytest>=8.0
+pytest-cov
+black

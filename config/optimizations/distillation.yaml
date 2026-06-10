@@ -1,0 +1,20 @@
+# Direction 3 — Knowledge Distillation experiment
+# Teacher: Raindrop (SOTA quality), Student: DLinear (O(n) speed).
+
+type: distillation
+teacher: raindrop
+student: dlinear
+
+kd_temperature: 4.0
+kd_alpha: 0.3         # weight for hard-label CE loss
+
+train_epochs: 100
+early_stopping_patience: 10
+optimizer: adam
+lr: 1.0e-3
+weight_decay: 1.0e-4
+
+metrics: [auroc, auroc_vs_teacher_delta, auroc_vs_student_baseline_delta,
+          latency_ms, latency_speedup_vs_teacher, peak_memory_mb]
+datasets: [p12, p19]
+requires_trained_teacher_checkpoint: true

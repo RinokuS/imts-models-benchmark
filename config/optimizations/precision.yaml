@@ -1,0 +1,25 @@
+# Direction 3 — Precision optimization experiment
+# Applies FP16/BF16 cast to trained models; no fine-tuning needed.
+
+type: precision
+variants:
+  - name: fp32_baseline
+    dtype: fp32
+  - name: fp16
+    dtype: fp16
+  - name: bf16
+    dtype: bf16
+
+apply_to:
+  - gru_d
+  - latent_ode
+  - neural_cde
+  - mtan
+  - raindrop
+  - s4
+  - mamba
+  - patchtst
+  - dlinear
+
+metrics: [auroc, latency_ms, peak_memory_mb, model_size_mb]
+datasets: [p12]

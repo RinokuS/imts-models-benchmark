@@ -1,0 +1,28 @@
+# Direction 2 — torch.compile experiment
+# All 10 models; compile mode determines fusion / CUDA Graph strategy.
+
+type: compilation
+variants:
+  - name: baseline_no_compile
+    mode: null
+  - name: compile_default
+    mode: default
+  - name: compile_reduce_overhead
+    mode: reduce-overhead
+  - name: compile_max_autotune
+    mode: max-autotune
+
+apply_to:
+  - gru_d
+  - latent_ode
+  - neural_cde
+  - mtan
+  - raindrop
+  - s4
+  - mamba
+  - patchtst
+  - dlinear
+
+metrics: [auroc, latency_ms, peak_memory_mb, compile_time_s, latency_speedup]
+datasets: [p12, synthetic]
+measure_compile_time: true
